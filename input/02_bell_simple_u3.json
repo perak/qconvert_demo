@@ -1,0 +1,111 @@
+{
+	"numQubits": 2,
+	"params": [],
+	"options": {
+		"params": {},
+		"hybrid": false,
+		"hybridOptions": {
+			"optimizer": "Powell",
+			"tolerance": 0.001,
+			"costFunction": {
+				"python": "",
+				"javascript": ""
+			}
+		},
+		"encoderDecoder": false,
+		"encoderDecoderOptions": {
+			"functionName": "",
+			"inputEncoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+					"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": [],
+				"data": []
+			},
+			"outputDecoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+					"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": []
+			}
+		}
+	},
+	"gates": [
+		[
+			{
+				"id": "AJlIi36w3Qpu0QaxP4",
+				"name": "u3",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": 1.570796326794896,
+						"phi": 1.570796326794897,
+						"lambda": 2.968731284043518
+					}
+				}
+			},
+			{
+				"id": "qo7qmPGrRQJgmNbcF0",
+				"name": "crx",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": 3.141592653589794
+					}
+				}
+			},
+			{
+				"id": "Apw4ml5ewlDHT3Pshw",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"creg": {
+						"bit": 0,
+						"name": "c"
+					}
+				}
+			},
+			null
+		],
+		[
+			null,
+			{
+				"id": "qo7qmPGrRQJgmNbcF0",
+				"name": "crx",
+				"connector": 1,
+				"options": {
+					"params": {
+						"theta": 3.141592653589794
+					}
+				}
+			},
+			null,
+			{
+				"id": "MFO8hRSB3ICkhDsJWE",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"creg": {
+						"bit": 1,
+						"name": "c"
+					}
+				}
+			}
+		]
+	],
+	"customGates": {},
+	"cregs": {
+		"c": [
+			1,
+			1
+		]
+	}
+}

@@ -1,0 +1,306 @@
+{
+	"numQubits": 2,
+	"params": [
+		"var0",
+		"var2",
+		"var1",
+		"var3",
+		"var4",
+		"var6",
+		"var5",
+		"var7",
+		"var8",
+		"var10",
+		"var9",
+		"var11",
+		"var12",
+		"var14",
+		"var13",
+		"var15"
+	],
+	"options": {
+		"params": {
+			"var0": 0,
+			"var2": 0,
+			"var1": 0,
+			"var3": 0,
+			"var4": 0,
+			"var6": 0,
+			"var5": 0,
+			"var7": 0,
+			"var8": 0,
+			"var10": 0,
+			"var9": 0,
+			"var11": 0,
+			"var12": 0,
+			"var14": 0,
+			"var13": 0,
+			"var15": 0
+		},
+		"hybrid": true,
+		"hybridOptions": {
+			"optimizer": "Powell",
+			"tolerance": 0.001,
+			"costFunction": {
+				"python": "\n# Hamiltonian\nH = np.array([\n  [0, 0, 0, 0],\n  [0, -1.8302, 0.182, 0],\n  [0, 0.182, -0.2738, 0],\n  [0, 0, 0, 0.1824]\n])\n\n# Expectation value: <Ψ|H|Ψ>\ncost = np.real(np.dot(np.dot(state, H), np.conjugate(state).transpose()))\n",
+				"javascript": "\n// Hamiltonian\nconst H = [\n  [0, 0, 0, 0],\n  [0, -1.8302, 0.182, 0],\n  [0, 0.182, -0.2738, 0],\n  [0, 0, 0, 0.1824]\n];\n\n// Expectation value: <Ψ|H|Ψ>\ncost = math.multiply(math.multiply(state, H), math.ctranspose([state]))[0].re;\n"
+			}
+		},
+		"encoderDecoder": false,
+		"encoderDecoderOptions": {
+			"functionName": "",
+			"inputEncoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+					"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": [],
+				"data": []
+			},
+			"outputDecoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+					"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": []
+			}
+		}
+	},
+	"gates": [
+		[
+			{
+				"id": "z4B7WQ7XOHFBr4Hct7",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var0"
+					}
+				}
+			},
+			{
+				"id": "xxRHOVGwOFlZ3IvIOo",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var1"
+					}
+				}
+			},
+			{
+				"id": "ZaHCRn23IUN4c07SS7",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "lNh41gWkQkyA4U83tz",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var4"
+					}
+				}
+			},
+			{
+				"id": "x9igUkkRHkjPlXtXKJ",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var5"
+					}
+				}
+			},
+			{
+				"id": "Ddn23gBQEEiy6Fb3XM",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "xBGkTcEf9MxA8RTITy",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var8"
+					}
+				}
+			},
+			{
+				"id": "y6vY9ktBrYcK1UuBRt",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var9"
+					}
+				}
+			},
+			{
+				"id": "oepFgNqCmYBCpUrAel",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "d174PtszaRKEF8dimU",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var12"
+					}
+				}
+			},
+			{
+				"id": "io9J4MeodMFwLGpyOv",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var13"
+					}
+				}
+			},
+			{
+				"id": "kOh2LEJSM6Sbh9EN88",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 0
+					}
+				}
+			},
+			null
+		],
+		[
+			{
+				"id": "JGKgWcSxGU3Qf3s6j2",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var2"
+					}
+				}
+			},
+			{
+				"id": "Ko2cXDs8DBdqKtfmjC",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var3"
+					}
+				}
+			},
+			{
+				"id": "ZaHCRn23IUN4c07SS7",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "TYZV4vNPojH26bvdim",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var6"
+					}
+				}
+			},
+			{
+				"id": "kB5RQ1X4194alnxit3",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var7"
+					}
+				}
+			},
+			{
+				"id": "Ddn23gBQEEiy6Fb3XM",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "tPJpU3dupho2NBj40J",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var10"
+					}
+				}
+			},
+			{
+				"id": "tkxmteEd3PxWW9EaDK",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var11"
+					}
+				}
+			},
+			{
+				"id": "oepFgNqCmYBCpUrAel",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "g1pVt5ZGDGMZoEPM5T",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var14"
+					}
+				}
+			},
+			{
+				"id": "pwc7XbO3VqIzFmEGU3",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var15"
+					}
+				}
+			},
+			null,
+			{
+				"id": "dkBWzAAuA4pM2Zxaab",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 1
+					}
+				}
+			}
+		]
+	],
+	"customGates": {},
+	"cregs": {
+		"c": [
+			0,
+			0
+		]
+	}
+}

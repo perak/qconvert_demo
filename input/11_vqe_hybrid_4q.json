@@ -1,0 +1,1112 @@
+{
+	"numQubits": 4,
+	"params": [
+		"var0",
+		"var2",
+		"var4",
+		"var6",
+		"var1",
+		"var3",
+		"var5",
+		"var7",
+		"var8",
+		"var10",
+		"var12",
+		"var14",
+		"var9",
+		"var11",
+		"var13",
+		"var15",
+		"var16",
+		"var18",
+		"var20",
+		"var22",
+		"var17",
+		"var19",
+		"var21",
+		"var23",
+		"var24",
+		"var26",
+		"var28",
+		"var30",
+		"var25",
+		"var27",
+		"var29",
+		"var31",
+		"var32",
+		"var34",
+		"var36",
+		"var38",
+		"var33",
+		"var35",
+		"var37",
+		"var39",
+		"var40",
+		"var42",
+		"var44",
+		"var46",
+		"var41",
+		"var43",
+		"var45",
+		"var47"
+	],
+	"options": {
+		"params": {
+			"var0": 0,
+			"var2": 0,
+			"var4": 0,
+			"var6": 0,
+			"var1": 0,
+			"var3": 0,
+			"var5": 0,
+			"var7": 0,
+			"var8": 0,
+			"var10": 0,
+			"var12": 0,
+			"var14": 0,
+			"var9": 0,
+			"var11": 0,
+			"var13": 0,
+			"var15": 0,
+			"var16": 0,
+			"var18": 0,
+			"var20": 0,
+			"var22": 0,
+			"var17": 0,
+			"var19": 0,
+			"var21": 0,
+			"var23": 0,
+			"var24": 0,
+			"var26": 0,
+			"var28": 0,
+			"var30": 0,
+			"var25": 0,
+			"var27": 0,
+			"var29": 0,
+			"var31": 0,
+			"var32": 0,
+			"var34": 0,
+			"var36": 0,
+			"var38": 0,
+			"var33": 0,
+			"var35": 0,
+			"var37": 0,
+			"var39": 0,
+			"var40": 0,
+			"var42": 0,
+			"var44": 0,
+			"var46": 0,
+			"var41": 0,
+			"var43": 0,
+			"var45": 0,
+			"var47": 0
+		},
+		"hybrid": true,
+		"hybridOptions": {
+			"optimizer": "Powell",
+			"tolerance": 0.001,
+			"costFunction": {
+				"python": "\n# Hamiltonian\nH = np.array([\n  [-0.00001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, -1.25247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, -1.25247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, -1.83045, 0, 0, 0, 0, 0, 0, 0, 0, 0.18128, 0, 0, 0],\n  [0, 0, 0, 0, -0.47595, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, -1.24625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, -1.06493, 0, 0, -0.18128, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, -1.16075, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, -0.47595, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, -0.18128, 0, 0, -1.06493, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.24625, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.16075, 0, 0, 0, 0],\n  [0, 0, 0, 0.18128, 0, 0, 0, 0, 0, 0, 0, 0, -0.25449, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.36131, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.36131, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.20635]\n])\n\n# Expectation value: <Ψ|H|Ψ>\ncost = np.real(np.dot(np.dot(state, H), np.conjugate(state).transpose()))\n",
+				"javascript": "\n// Hamiltonian\nconst H = [\n  [-0.00001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, -1.25247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, -1.25247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, -1.83045, 0, 0, 0, 0, 0, 0, 0, 0, 0.18128, 0, 0, 0],\n  [0, 0, 0, 0, -0.47595, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, -1.24625, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, -1.06493, 0, 0, -0.18128, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, -1.16075, 0, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, -0.47595, 0, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, -0.18128, 0, 0, -1.06493, 0, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.24625, 0, 0, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1.16075, 0, 0, 0, 0],\n  [0, 0, 0, 0.18128, 0, 0, 0, 0, 0, 0, 0, 0, -0.25449, 0, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.36131, 0, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.36131, 0],\n  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.20635]\n];\n\n// Expectation value: <Ψ|H|Ψ>\ncost = math.multiply(math.multiply(state, H), math.ctranspose([state]))[0].re;\n"
+			}
+		},
+		"encoderDecoder": false,
+		"encoderDecoderOptions": {
+			"functionName": "",
+			"inputEncoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+					"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": [],
+				"data": []
+			},
+			"outputDecoding": {
+				"type": "custom",
+				"customFunction": {
+					"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+					"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+				},
+				"qubitOffset": 0,
+				"colDefs": []
+			}
+		}
+	},
+	"gates": [
+		[
+			{
+				"id": "vO247YJxwPRJOLrR7U",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var0"
+					}
+				}
+			},
+			{
+				"id": "rAXxWoAY0qed9GkqZe",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var1"
+					}
+				}
+			},
+			{
+				"id": "yhsG7TUUXbXoWHgCj2",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "joS48QX7wnIZiXfQa5",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "e3OiSX9qPHFSzHvPxg",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "J0iJQSI83Bryroxaaz",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var8"
+					}
+				}
+			},
+			{
+				"id": "v1jrStrM4UCXzv5CxF",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var9"
+					}
+				}
+			},
+			{
+				"id": "vcESnblcHcB6b8cEQV",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "DResNV7Eh83miHZDZF",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "Q07nQaRIwrHuU4U90Y",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "qaQJtVnQfhdt2PsKsP",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var16"
+					}
+				}
+			},
+			{
+				"id": "hFdMwsU6iquLWiv8z9",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var17"
+					}
+				}
+			},
+			{
+				"id": "q2HLuzDAzQDyyo0b8X",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "ypaBQe4MkRRRhnan2V",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "a2A5aTcZTPTKlFhkv9",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "tvfJn5fZsp3IqJertH",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var24"
+					}
+				}
+			},
+			{
+				"id": "kQbnLLaLixQZ0YXY1P",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var25"
+					}
+				}
+			},
+			{
+				"id": "iNI3aNHIpYbslnsGdN",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "zItXXGlJ7A5G9fr6Dh",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "d46kByNnkcRR0r0ska",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "CMDwmYiXi1Ff3ZsvF4",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var32"
+					}
+				}
+			},
+			{
+				"id": "QW5L6Nbo3xHL9CdC0c",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var33"
+					}
+				}
+			},
+			{
+				"id": "qQVz5nXFt2y5Nb4crV",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "UUPqi7NHjqe2bmNIFF",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "sFP63i1Ca3yGVdNz4y",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "IYxumfLUttgowaB1rp",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var40"
+					}
+				}
+			},
+			{
+				"id": "cDw78oMAT3QdY9dFYz",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var41"
+					}
+				}
+			},
+			{
+				"id": "eF38vKh8haIaQE9EC6",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 0
+					}
+				}
+			},
+			null,
+			null,
+			null
+		],
+		[
+			{
+				"id": "Ne3KEDvmAmOvYOJCyY",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var2"
+					}
+				}
+			},
+			{
+				"id": "OXTDfV6klLDV0VDQQE",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var3"
+					}
+				}
+			},
+			{
+				"id": "yhsG7TUUXbXoWHgCj2",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			null,
+			{
+				"id": "HahePQCCf6fr3EeNZp",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "nYQDMIMwQ0wdxcsWcJ",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			{
+				"id": "VU918rWvdLMTP9at2G",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var10"
+					}
+				}
+			},
+			{
+				"id": "AHu2EO4URUvMJfvN6P",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var11"
+					}
+				}
+			},
+			{
+				"id": "vcESnblcHcB6b8cEQV",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			null,
+			{
+				"id": "YI4LpfB8nFk20OqZtx",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "g6zcdVKwcaGEY2LxA8",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			{
+				"id": "k0UUAo6eeLa3uRB6SW",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var18"
+					}
+				}
+			},
+			{
+				"id": "dZIfe5FgyqIJA8e8S6",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var19"
+					}
+				}
+			},
+			{
+				"id": "q2HLuzDAzQDyyo0b8X",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			null,
+			{
+				"id": "bdhayC530EBChoCaOZ",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "gWSRIPEWrVk1vPaxQT",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			{
+				"id": "TW1cRqogxOUTQQeQS3",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var26"
+					}
+				}
+			},
+			{
+				"id": "rjzvEztzeEfxe8ZNO0",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var27"
+					}
+				}
+			},
+			{
+				"id": "iNI3aNHIpYbslnsGdN",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			null,
+			{
+				"id": "s0m9YJzHziXOEs3piT",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "mcb5BnxIexZOMXVVGj",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			{
+				"id": "d1xYTUGJep9IkrWCVQ",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var34"
+					}
+				}
+			},
+			{
+				"id": "mrKZOPPcNcrg1NycJn",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var35"
+					}
+				}
+			},
+			{
+				"id": "qQVz5nXFt2y5Nb4crV",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			null,
+			{
+				"id": "wKN8VL3bA5v0tSF7hj",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "fupXsSgYfsqFg0PMNT",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			null,
+			{
+				"id": "TYcqYLvXaAsgujvIqS",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var42"
+					}
+				}
+			},
+			{
+				"id": "Xqur5awmsTBnlLBLv2",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var43"
+					}
+				}
+			},
+			null,
+			{
+				"id": "TNyvYkKo1v55k29OyI",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 1
+					}
+				}
+			},
+			null,
+			null
+		],
+		[
+			{
+				"id": "Vt4ZsML3lKVhmqeQqf",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var4"
+					}
+				}
+			},
+			{
+				"id": "u6V2oGc4jFiUD3PC5D",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var5"
+					}
+				}
+			},
+			null,
+			{
+				"id": "joS48QX7wnIZiXfQa5",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "HahePQCCf6fr3EeNZp",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "Xpx0SfF1ehVRq3p0ju",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "BzJ5yIFvWtzmFWkGWD",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var12"
+					}
+				}
+			},
+			{
+				"id": "Lohx7i2CVmQeXychQ0",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var13"
+					}
+				}
+			},
+			null,
+			{
+				"id": "DResNV7Eh83miHZDZF",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "YI4LpfB8nFk20OqZtx",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "BJFAbcIesKaT8jlegC",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "N6iHUlYUDYd6vWYy8h",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var20"
+					}
+				}
+			},
+			{
+				"id": "bodkNxMgk4UWNbhKQO",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var21"
+					}
+				}
+			},
+			null,
+			{
+				"id": "ypaBQe4MkRRRhnan2V",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "bdhayC530EBChoCaOZ",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "tjK1Wk89bYiziWix3w",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "CeHvg0AaRBE4uBRCYg",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var28"
+					}
+				}
+			},
+			{
+				"id": "cDzSDE6ZFuZZ6qnrXp",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var29"
+					}
+				}
+			},
+			null,
+			{
+				"id": "zItXXGlJ7A5G9fr6Dh",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "s0m9YJzHziXOEs3piT",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "ifpaxdFUZLwUtuqerw",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "zHdSCclyEdOLlDpy1J",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var36"
+					}
+				}
+			},
+			{
+				"id": "yyZ3e36dghIlMJ28xj",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var37"
+					}
+				}
+			},
+			null,
+			{
+				"id": "UUPqi7NHjqe2bmNIFF",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "wKN8VL3bA5v0tSF7hj",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "IijLUXV1j4UsH3bMRN",
+				"name": "cx",
+				"connector": 0,
+				"options": {}
+			},
+			{
+				"id": "XVimug6olWrSJ3e3xN",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var44"
+					}
+				}
+			},
+			{
+				"id": "ouF7VEx4j4n2ec9ePW",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var45"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "qx1V7tKLz1SgQNCLWv",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 2
+					}
+				}
+			},
+			null
+		],
+		[
+			{
+				"id": "VEJTZyTb0WA3HgxPup",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var6"
+					}
+				}
+			},
+			{
+				"id": "EWumNMSQt3AAoH8Qjx",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var7"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "e3OiSX9qPHFSzHvPxg",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "nYQDMIMwQ0wdxcsWcJ",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "Xpx0SfF1ehVRq3p0ju",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "YTN01Nez3vZgoFReno",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var14"
+					}
+				}
+			},
+			{
+				"id": "vQVIcg7JkEcxBLr0KW",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var15"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "Q07nQaRIwrHuU4U90Y",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "g6zcdVKwcaGEY2LxA8",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "BJFAbcIesKaT8jlegC",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "cTTZEGujYCB6ubUzmy",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var22"
+					}
+				}
+			},
+			{
+				"id": "aHBIUChCeGCnsKafbO",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var23"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "a2A5aTcZTPTKlFhkv9",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "gWSRIPEWrVk1vPaxQT",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "tjK1Wk89bYiziWix3w",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "hroA4Ejxp2QlXxvBks",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var30"
+					}
+				}
+			},
+			{
+				"id": "kwINFIhKNwFx4PUf0T",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var31"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "d46kByNnkcRR0r0ska",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "mcb5BnxIexZOMXVVGj",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "ifpaxdFUZLwUtuqerw",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "Al91YOvbKMjBYctfkx",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var38"
+					}
+				}
+			},
+			{
+				"id": "QrdnHoiu2BGQVk7rd3",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var39"
+					}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "sFP63i1Ca3yGVdNz4y",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			null,
+			{
+				"id": "fupXsSgYfsqFg0PMNT",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "IijLUXV1j4UsH3bMRN",
+				"name": "cx",
+				"connector": 1,
+				"options": {}
+			},
+			{
+				"id": "mjiB3wcs3JOgm0iPVn",
+				"name": "ry",
+				"connector": 0,
+				"options": {
+					"params": {
+						"theta": "var46"
+					}
+				}
+			},
+			{
+				"id": "HIi4fpH44yg1F7WYVw",
+				"name": "rz",
+				"connector": 0,
+				"options": {
+					"params": {
+						"phi": "var47"
+					}
+				}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "iQbULbBiGz97bkvoC6",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "c",
+						"bit": 3
+					}
+				}
+			}
+		]
+	],
+	"customGates": {},
+	"cregs": {
+		"c": [
+			0,
+			0,
+			0,
+			0
+		]
+	}
+}
