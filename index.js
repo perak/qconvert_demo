@@ -59,10 +59,10 @@ function convertCode(inputDir, outputDir, outputFormat) {
 				outputContent = qc.exportToSVG();
 				fileExt = ".svg";
 			}; break;
-			// case "cudaq": {
-			//	 outputContent = qc.exportToCudaQ();
-			//	 fileExt = ".py";
-			// }; break;
+			case "cudaq": {
+				 outputContent = qc.exportToCudaQ();
+				 fileExt = ".py";
+			}; break;
 
 			default: {
 				console.error(`Unknown format "${outputFormat}".`);
@@ -78,6 +78,9 @@ function convertCode(inputDir, outputDir, outputFormat) {
 	console.log("Done.\n");
 }
 
-convertCode("input", "output", "qiskit");
-convertCode("input", "output", "svg");
-// convertCode("./input/", "./output/", "cudaq");
+convertCode("./input/gates/", "./output/gates/", "qiskit");
+convertCode("./input/circuits/", "./output/circuits/", "qiskit");
+convertCode("./input/gates/", "./output/gates/", "cudaq");
+convertCode("./input/circuits/", "./output/circuits/", "cudaq");
+convertCode("./input/gates/", "./output/gates/", "svg");
+convertCode("./input/circuits/", "./output/circuits/", "svg");
