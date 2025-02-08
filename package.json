@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "quantum-circuit": "^0.9.232"
+    "quantum-circuit": "^0.9.236"
   }
 }

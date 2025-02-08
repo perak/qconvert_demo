@@ -1,0 +1,733 @@
+{
+	"numQubits": 10,
+	"params": [],
+	"options": {
+		"params": {},
+		"hybrid": false,
+		"hybridOptions": {
+			"optimizer": "Powell",
+			"tolerance": 0.001,
+			"costFunction": {
+				"python": "",
+				"javascript": ""
+			}
+		},
+		"encoderDecoder": true,
+		"encoderDecoderOptions": {
+			"functionName": "quantum_adder",
+			"inputEncoding": {
+				"type": "basis",
+				"customFunction": {
+					"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+					"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+				},
+				"qubitOffset": 1,
+				"colDefs": [
+					{
+						"name": "a",
+						"structure": "scalar",
+						"dimensions": [],
+						"type": "integer",
+						"min": "0",
+						"max": "15",
+						"bits": 4
+					},
+					{
+						"name": "b",
+						"structure": "scalar",
+						"dimensions": [],
+						"type": "integer",
+						"min": "0",
+						"max": "15",
+						"bits": 4
+					}
+				],
+				"data": [
+					{
+						"a": 11,
+						"b": 14
+					},
+					{
+						"a": 2,
+						"b": 2
+					},
+					{
+						"a": 14,
+						"b": 15
+					},
+					{
+						"a": 1,
+						"b": 1
+					}
+				]
+			},
+			"outputDecoding": {
+				"type": "basis",
+				"customFunction": {
+					"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+					"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+				},
+				"qubitOffset": 5,
+				"colDefs": [
+					{
+						"name": "c",
+						"structure": "scalar",
+						"dimensions": [],
+						"type": "integer",
+						"min": "0",
+						"max": "31",
+						"bits": 5
+					}
+				]
+			}
+		}
+	},
+	"gates": [
+		[
+			{
+				"id": "AH7slRYnTMnFvFN6oC",
+				"name": "majority",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "psiFnMwJKsdR30aw5s",
+				"name": "unmaj",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			{
+				"id": "AH7slRYnTMnFvFN6oC",
+				"name": "majority",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "LFIY1UULsID4JZpwfo",
+				"name": "majority",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "GRDDjMXrt4XO782lKI",
+				"name": "unmaj",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "psiFnMwJKsdR30aw5s",
+				"name": "unmaj",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			{
+				"id": "LFIY1UULsID4JZpwfo",
+				"name": "majority",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "pq6RDxrj9WqttGPZEY",
+				"name": "majority",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "WoGQMhMjjZcQEjLKpk",
+				"name": "unmaj",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "GRDDjMXrt4XO782lKI",
+				"name": "unmaj",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			{
+				"id": "pq6RDxrj9WqttGPZEY",
+				"name": "majority",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "C5GbWQgOsWT2x2Vx1K",
+				"name": "majority",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			{
+				"id": "o4UiW7x4N0mccLTpvL",
+				"name": "unmaj",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "WoGQMhMjjZcQEjLKpk",
+				"name": "unmaj",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"id": "C5GbWQgOsWT2x2Vx1K",
+				"name": "majority",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "BXFodwb8qto4BXhpng",
+				"name": "cx",
+				"connector": 0,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "o4UiW7x4N0mccLTpvL",
+				"name": "unmaj",
+				"connector": 2,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			{
+				"id": "AH7slRYnTMnFvFN6oC",
+				"name": "majority",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "psiFnMwJKsdR30aw5s",
+				"name": "unmaj",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			{
+				"id": "LgG8at93n4nOSgeNGx",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "ans",
+						"bit": 0
+					},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			{
+				"id": "LFIY1UULsID4JZpwfo",
+				"name": "majority",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "GRDDjMXrt4XO782lKI",
+				"name": "unmaj",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			{
+				"id": "KSSQsb2v4a23ESTaMh",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "ans",
+						"bit": 1
+					},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			{
+				"id": "pq6RDxrj9WqttGPZEY",
+				"name": "majority",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			{
+				"id": "WoGQMhMjjZcQEjLKpk",
+				"name": "unmaj",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "pLRvCv4qzPG55Olnwy",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "ans",
+						"bit": 2
+					},
+					"condition": {}
+				}
+			},
+			null,
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			{
+				"id": "C5GbWQgOsWT2x2Vx1K",
+				"name": "majority",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			{
+				"id": "o4UiW7x4N0mccLTpvL",
+				"name": "unmaj",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "AIaVTrq2lfaKTonloG",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "ans",
+						"bit": 3
+					},
+					"condition": {}
+				}
+			},
+			null
+		],
+		[
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "BXFodwb8qto4BXhpng",
+				"name": "cx",
+				"connector": 1,
+				"options": {
+					"params": {},
+					"condition": {}
+				}
+			},
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			null,
+			{
+				"id": "VUNM5qFBozEQIkbRdI",
+				"name": "measure",
+				"connector": 0,
+				"options": {
+					"creg": {
+						"name": "ans",
+						"bit": 4
+					},
+					"condition": {}
+				}
+			}
+		]
+	],
+	"customGates": {
+		"majority": {
+			"numQubits": 3,
+			"params": [],
+			"options": {
+				"params": {},
+				"hybrid": false,
+				"hybridOptions": {
+					"optimizer": "Powell",
+					"tolerance": 0.001,
+					"costFunction": {
+						"python": "",
+						"javascript": ""
+					}
+				},
+				"encoderDecoder": false,
+				"encoderDecoderOptions": {
+					"inputEncoding": {
+						"type": "custom",
+						"customFunction": {
+							"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+							"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+						},
+						"qubitOffset": 0,
+						"colDefs": [],
+						"data": []
+					},
+					"outputDecoding": {
+						"type": "custom",
+						"customFunction": {
+							"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+							"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+						},
+						"qubitOffset": 0,
+						"colDefs": []
+					}
+				}
+			},
+			"gates": [
+				[
+					null,
+					{
+						"id": "xxEMQ8hKvu5BcvKsOK",
+						"name": "cx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "zFxr9P8K9611ed6Kic",
+						"name": "ccx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					}
+				],
+				[
+					{
+						"id": "i1wwgshIFiH8d1S2tX",
+						"name": "cx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					},
+					null,
+					{
+						"id": "zFxr9P8K9611ed6Kic",
+						"name": "ccx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					}
+				],
+				[
+					{
+						"id": "i1wwgshIFiH8d1S2tX",
+						"name": "cx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "xxEMQ8hKvu5BcvKsOK",
+						"name": "cx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "zFxr9P8K9611ed6Kic",
+						"name": "ccx",
+						"connector": 2,
+						"options": {
+							"params": {}
+						}
+					}
+				]
+			],
+			"customGates": {},
+			"cregs": {}
+		},
+		"unmaj": {
+			"numQubits": 3,
+			"params": [],
+			"options": {
+				"params": {},
+				"hybrid": false,
+				"hybridOptions": {
+					"optimizer": "Powell",
+					"tolerance": 0.001,
+					"costFunction": {
+						"python": "",
+						"javascript": ""
+					}
+				},
+				"encoderDecoder": false,
+				"encoderDecoderOptions": {
+					"inputEncoding": {
+						"type": "custom",
+						"customFunction": {
+							"python": "def custom_encoder(input_data_row, input_encoding):\n    qasm = \"\"\n    qasm += \"OPENQASM 2.0;\\n\"\n    qasm += \"include \\\"qelib1.inc\\\";\\n\"\n\n    # ...\n\n    return qasm\n",
+							"javascript": "function customEncoder(inputDataRow, inputEncoding) {\n    let qasm = \"\";\n    qasm += \"OPENQASM 2.0;\\n\";\n    qasm += \"include \\\"qelib1.inc\\\";\\n\";\n    \n    // ...\n    \n    return qasm;\n}\n"
+						},
+						"qubitOffset": 0,
+						"colDefs": [],
+						"data": []
+					},
+					"outputDecoding": {
+						"type": "custom",
+						"customFunction": {
+							"python": "def custom_decoder(counts, output_decoding):\n    output_data_row = {}\n\n    # ...\n    \n    return output_data_row\n",
+							"javascript": "function customDecoder(counts, outputDecoding) {\n    outputDataRow = {};\n    \n    // ...\n    \n    return outputDataRow;\n}\n"
+						},
+						"qubitOffset": 0,
+						"colDefs": []
+					}
+				}
+			},
+			"gates": [
+				[
+					{
+						"id": "Jrht2d5fFv8X5jhunB",
+						"name": "ccx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "MtDNizpTyLetchmKA7",
+						"name": "cx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "V17Adx7ExlN5NXfhNx",
+						"name": "cx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					}
+				],
+				[
+					{
+						"id": "Jrht2d5fFv8X5jhunB",
+						"name": "ccx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					},
+					null,
+					{
+						"id": "V17Adx7ExlN5NXfhNx",
+						"name": "cx",
+						"connector": 1,
+						"options": {
+							"params": {}
+						}
+					}
+				],
+				[
+					{
+						"id": "Jrht2d5fFv8X5jhunB",
+						"name": "ccx",
+						"connector": 2,
+						"options": {
+							"params": {}
+						}
+					},
+					{
+						"id": "MtDNizpTyLetchmKA7",
+						"name": "cx",
+						"connector": 0,
+						"options": {
+							"params": {}
+						}
+					},
+					null
+				]
+			],
+			"customGates": {},
+			"cregs": {}
+		}
+	},
+	"cregs": {
+		"ans": [
+			0,
+			0,
+			0,
+			0,
+			0
+		]
+	}
+}
