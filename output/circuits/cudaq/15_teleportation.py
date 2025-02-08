@@ -11,10 +11,12 @@ def circuit():
   cx(q[1], q[2])
   cx(q[0], q[1])
   h(q[0])
-  mz(q[1])
-  x(q[2]).c_if(c1, 1)
-  mz(q[0])
-  z(q[2]).c_if(c0, 1)
+  c1 = mz(q[1])
+  if c1:
+    x(q[2])
+  c0 = mz(q[0])
+  if c0:
+    z(q[2])
 
 counts = cudaq.sample(circuit, shots_count=shots)
 print(counts)
